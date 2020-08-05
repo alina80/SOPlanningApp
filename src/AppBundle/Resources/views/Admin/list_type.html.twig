@@ -1,0 +1,58 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}TypeList{% endblock %}
+
+{% block body %}
+    <div class="row mt-4">
+        <div class="col-4">
+            <button class="btn btn-outline-primary">
+                <a href="{{ path('app_admin_addtype') }}">Add Type</a>
+            </button>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">User Description</th>
+                    <th scope="col">User Type</th>
+                    <th colspan="2" width="10%">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% set i = 1 %}
+                {% for type in types %}
+
+                    <tr>
+                        <th scope="row">{{ i }}</th>
+                        <td>{{ type.description }}</td>
+                        <td>{{ type.type }}</td>
+                        <td>
+                            <a href="{{ path('app_admin_edittype',{id:type.id}) }}"><i class="fa fa-edit"></i> </a>
+                        </td>
+                        <td>
+                            <a href="{{ path('app_admin_deletetype',{id:type.id}) }}" class="text-danger"><i class="fa fa-times"></i> </a>
+                        </td>
+                    </tr>
+                    {% set i = i + 1 %}
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <span class="text-danger">
+                {{ message }}
+            </span>
+
+        </div>
+    </div>
+
+{% endblock %}

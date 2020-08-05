@@ -1,0 +1,52 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}UsersList{% endblock %}
+
+{% block body %}
+    <div class="row mt-4">
+        <div class="col-4">
+            <button class="btn btn-outline-primary">
+                <a href="{{ path('app_admin_adduser') }}">Add User</a>
+            </button>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">User Name</th>
+                    <th scope="col">User Type</th>
+                    <th scope="col">Department</th>
+                    <th colspan="2" width="10%">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% set i = 1 %}
+                {% for user in users %}
+
+                    <tr>
+                        <th scope="row">{{ i }}</th>
+                        <td>{{ user.userName }}</td>
+                        <td>{{ user.type.type }}</td>
+                        <td>{{ user.department.description }}</td>
+                        <td>
+                            <a href="{{ path('app_admin_edituser',{id:user.id}) }}"><i class="fa fa-edit"></i> </a>
+                        </td>
+                        <td>
+                            <a href="{{ path('app_admin_deleteuser',{id:user.id}) }}"><i class="fa fa-times"></i> </a>
+                        </td>
+                    </tr>
+                    {% set i = i + 1 %}
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+{% endblock %}

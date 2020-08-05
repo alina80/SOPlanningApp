@@ -1,0 +1,32 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}Add Department{% endblock %}
+
+{% block body %}
+    <div class="row mt-4">
+        <div class="col-6">
+            Back to departments
+            <button class="btn btn-outline-primary">
+                <a href="{{ path('app_admin_listdepartments') }}"><i class="fa fa-arrow-right"></i> </a>
+            </button>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <legend>Add Department</legend>
+            <div class="{% if (errors ?? [])  %}alert-danger{% endif %}">
+                {{ (errors ?? []) | join(',') }}
+            </div>
+            <form action="{{ path('app_admin_savedepartment') }}" method="post">
+                <div class="form-group">
+                    <label for="departmentDescription">Description</label>
+                    <input type="text" class="form-control" id="departmentDescription" name="description" placeholder="Enter department">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "::admin.html.twig" %}
+
+{% block title %}Add User{% endblock %}
+
+{% block body %}
+    <div class="row mt-4">
+        <div class="col-6">
+            Back to users
+            <button class="btn btn-outline-primary">
+                <a href="{{ path('app_admin_listusers') }}"><i class="fa fa-arrow-right"></i> </a>
+            </button>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <form action="{{ path('app_admin_saveuser') }}" method="post">
+
+                <legend>Add User</legend>
+
+                <div class="{% if (errors ?? [])  %}alert-danger{% endif %}">
+                    {{ (errors ?? []) | join(',') }}
+                </div>
+
+                <div class="form-group">
+                    <label for="departmentCategory">Select Department</label>
+                    <select class="form-control" id="departmentCategory" name="department_id">
+                        <option>-- Select Department --</option>
+                        {% for department in departments %}
+                            <option value="{{ department.id }}" {% if (user.department.id ?? 0) == department.id or (user.department_id ?? 0) == department.id %}selected{% endif %}>
+                                {{ department.description }}
+                            </option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="userTypeCategory">Select Type</label>
+                    <select class="form-control" id="userTypeCategory" name="type_id">
+                        <option>-- Select User Type --</option>
+                        {% for type in types %}
+                            <option value="{{ type.id }}" {% if (user.type.id ?? 0) == type.id or (user.type_id ?? 0) == type.id %}selected{% endif %}>
+                                {{ type.type }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="userName">Name</label>
+                    <input type="text" class="form-control" name="name" id="userName" placeholder="User name">
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email address</label>
+                    <input type="email" class="form-control" id="userEmail" name="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="userPassword">Password</label>
+                    <input type="password" class="form-control" id="userPassword" name="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="userCheckPassword">Check Password</label>
+                    <input type="password" class="form-control" id="userCheckPassword" name="checkPassword" placeholder="Check Password">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+{% endblock %}

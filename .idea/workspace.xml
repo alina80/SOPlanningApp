@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9574b7a5-7332-4069-9f23-b40f12ce7909" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/SOPlanningApp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Dates.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Department.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Type.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Repository/DatesRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Repository/DepartmentRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Repository/TypeRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/sensio/generator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/vendor/sensio/distribution-bundle" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/vendor/sensiolabs/security-checker" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-apcu" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/symfony" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/incenteev/composer-parameter-handler" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1ff8z3fDY4RZN4H2vgtauixGLpS" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9574b7a5-7332-4069-9f23-b40f12ce7909" name="Default Changelist" comment="" />
+      <created>1596598047672</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596598047672</updated>
+      <workItem from="1596598049930" duration="702000" />
+      <workItem from="1596599126896" duration="1037000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="481" y="275" width="444" height="242" key="#Composer" timestamp="1596598137944">
+      <screen x="51" y="27" width="1315" height="741" />
+    </state>
+    <state x="481" y="275" width="444" height="242" key="#Composer/51.27.1315.741@51.27.1315.741" timestamp="1596598137944" />
+  </component>
+</project>

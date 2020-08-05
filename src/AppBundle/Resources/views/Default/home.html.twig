@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <div class="row mt-4">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <legend>Login</legend>
+                <div class="{{ success == true ? '' : 'alert alert-danger' }}">
+                    {{ success == true ? '' : 'Wrong credentials' }}
+                </div>
+
+            <form action="{{ path('app_default_login') }}" method="post">
+           <!--     <div class="form-group">
+                    <label for="userId">Select Name</label>
+                    <select class="form-control" id="userId" name="userId">
+                        <option>-- Select User Type --</option>
+                 {#       {% for user in users %}
+                            <option value="{{ user.id }}" {% if (user.user_name.id ?? 0) == user.id or (user.userName ?? 0) == user.id %}selected{% endif %}>
+                                {{ user.userName }}
+                            </option>
+                        {% endfor %}  #}
+                    </select>
+                </div>  -->
+
+                    <div class="form-group">
+                        <label for="userName">Name</label>
+                        <input type="text" class="form-control" id="userName" name="name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">Email</label>
+                        <input type="email" class="form-control" id="userEmail" name="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="userPassword">Password</label>
+                        <input type="password" class="form-control" id="userPassword" name="password" placeholder="Password">
+                    </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+
+{% endblock %}

@@ -81,8 +81,6 @@ class DefaultController extends Controller
      */
     public function showUserPageAction(SessionInterface $session)
     {
-
-        print_r($_SESSION);
         return $this->render('AppBundle:Default:show_user_page.html.twig',[
             'user'=>$session->get('name')
         ]);
@@ -94,14 +92,10 @@ class DefaultController extends Controller
      */
     public function selectDateAction(SessionInterface $session, Request $request, $id =null)
     {
-        /*      $data = $request->request->get('data')->format('Y/m/d');
-                $day = explode('/',$data)[2];
-                $month = explode('/',$data)[1];
-                $year = explode('/',$data)[0];
-        */
-        $day = $request->request->get('day');
-        $month = $request->request->get('month');
-        $year = $request->request->get('year');
+        $data = $request->request->get('data');
+        $day = explode('-',$data)[2];
+        $month = explode('-',$data)[1];
+        $year = explode('-',$data)[0];
 
         $data = new \DateTime();
         $data->setDate($year,$month,$day);

@@ -8,13 +8,12 @@ use AppBundle\Entity\Type;
 use AppBundle\Entity\User;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 use Doctrine\DBAL\DBALException;
-use Doctrine\ORM\ORMException;
-use PDOException;
-use Exception;
 
 class AdminController extends Controller
 {
@@ -59,6 +58,9 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/saveUser/{id}",methods={"POST"})
+     * @param Request $request
+     * @param null $id
+     * @return RedirectResponse|Response|null
      */
     public function saveUserAction(Request $request, $id = null)
     {
@@ -70,10 +72,8 @@ class AdminController extends Controller
         $checkPass = $request->request->get('checkPassword');
 
         $departmentRepo = $this->getDoctrine()->getManager()->getRepository('AppBundle:Department');
-        $departments = $departmentRepo->findAll();
 
         $typesRepo = $this->getDoctrine()->getManager()->getRepository('AppBundle:Type');
-        $types = $typesRepo->findAll();
 
         $errors = [];
 
@@ -133,6 +133,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/showUser/{id}")
+     * @param $id
+     * @return Response|null
      */
     public function showUserAction($id)
     {
@@ -143,6 +145,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/editUser/{id}", methods={"GET"})
+     * @param $id
+     * @return Response|null
      */
     public function editUserAction($id)
     {
@@ -164,6 +168,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/deleteUser/{id}")
+     * @param $id
+     * @return RedirectResponse
      */
     public function deleteUserAction($id)
     {
@@ -200,6 +206,9 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/saveType/{id}", methods={"POST"})
+     * @param Request $request
+     * @param null $id
+     * @return RedirectResponse|Response|null
      */
     public function saveTypeAction(Request $request, $id = null)
     {
@@ -249,6 +258,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/editType/{id}", methods={"GET"})
+     * @param null $id
+     * @return Response|null
      */
     public function editTypeAction($id = null)
     {
@@ -262,6 +273,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/deleteType/{id}", methods={"GET"})
+     * @param null $id
+     * @return Response|null
      */
     public function deleteTypeAction($id = null)
     {
@@ -311,6 +324,9 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/saveDepartment/{id}", methods={"POST"})
+     * @param Request $request
+     * @param null $id
+     * @return RedirectResponse|Response|null
      */
     public function saveDepartmentAction(Request $request, $id = null)
     {
@@ -356,6 +372,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/showDepartment/{id}")
+     * @param $id
+     * @return Response|null
      */
     public function showDepartmentAction($id)
     {
@@ -366,6 +384,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/editDepartment/{id}")
+     * @param $id
+     * @return Response|null
      */
     public function editDepartmentAction($id)
     {
@@ -379,6 +399,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/deleteDepartment/{id}", methods={"GET"})
+     * @param null $id
+     * @return Response|null
      */
     public function deleteDepartmentAction($id = null)
     {
@@ -422,6 +444,9 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/saveStatus/{id}", methods={"POST"})
+     * @param Request $request
+     * @param null $id
+     * @return RedirectResponse|Response|null
      */
     public function saveStatusAction(Request $request, $id = null)
     {
@@ -465,6 +490,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/showStatus/{id}")
+     * @param $id
+     * @return Response|null
      */
     public function showStatusAction($id)
     {
@@ -473,6 +500,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/editStatus/{id}", methods={"GET"})
+     * @param $id
+     * @return Response|null
      */
     public function editStatusAction($id)
     {
@@ -486,6 +515,8 @@ class AdminController extends Controller
 
     /**
      * @Route("/admin/deleteStatus/{id}", methods={"GET"})
+     * @param null $id
+     * @return RedirectResponse
      */
     public function deleteStatusAction($id = null)
     {

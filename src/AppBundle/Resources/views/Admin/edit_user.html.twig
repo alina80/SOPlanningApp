@@ -1,6 +1,6 @@
 {% extends "::admin.html.twig" %}
 
-{% block title %}Add User{% endblock %}
+{% block title %}Edit User{% endblock %}
 
 {% block body %}
     <div class="row mt-4">
@@ -16,7 +16,7 @@
         <div class="col-8">
             <form action="{{ path('app_admin_saveuser',{id:user.id}) }}" method="post">
 
-                <legend>Add User</legend>
+                <legend>Edit User</legend>
 
                 <div class="{% if (errors ?? [])  %}alert-danger{% endif %}">
                     {{ (errors ?? []) | join(',') }}
@@ -27,7 +27,7 @@
                     <select class="form-control" id="departmentCategory" name="department_id">
                         <option>-- Select Department --</option>
                         {% for department in departments %}
-                            <option value="{{ department.id }}" {% if (user.department.id ?? 0) == department.id or (user.department_id ?? 0) == department.id %}selected{% endif %}>
+                            <option value="{{ department.id }}" {% if (user.department.id ?? 0) == department.id %}selected{% endif %}>
                                 {{ department.description }}
                             </option>
                         {% endfor %}
@@ -40,7 +40,7 @@
                     <select class="form-control" id="userTypeCategory" name="type_id">
                         <option>-- Select User Type --</option>
                         {% for type in types %}
-                            <option value="{{ type.id }}" {% if (user.type.id ?? 0) == type.id or (user.type_id ?? 0) == type.id %}selected{% endif %}>
+                            <option value="{{ type.id }}" {% if (user.type.id ?? 0) == type.id %}selected{% endif %}>
                                 {{ type.type }}
                             </option>
                         {% endfor %}

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -43,14 +44,14 @@ class Appointment
     private $statusId;
 
     /**
-     * @var \DateTime
+     * @var DateTime
      *
      * @ORM\Column(name="start_hour", type="time")
      */
     private $startHour;
 
     /**
-     * @var \DateTime
+     * @var DateTime
      *
      * @ORM\Column(name="end_hour", type="time")
      */
@@ -173,7 +174,7 @@ class Appointment
     /**
      * Set startHour
      *
-     * @param \DateTime $startHour
+     * @param DateTime $startHour
      *
      * @return Appointment
      */
@@ -187,7 +188,7 @@ class Appointment
     /**
      * Get startHour
      *
-     * @return \DateTime
+     * @return DateTime
      */
     public function getStartHour()
     {
@@ -197,7 +198,7 @@ class Appointment
     /**
      * Set endHour
      *
-     * @param \DateTime $endHour
+     * @param DateTime $endHour
      *
      * @return Appointment
      */
@@ -211,7 +212,7 @@ class Appointment
     /**
      * Get endHour
      *
-     * @return \DateTime
+     * @return DateTime
      */
     public function getEndHour()
     {

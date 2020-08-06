@@ -1,2 +1,2 @@
 # SOPlanningApp
-Online scheduling appointments application
+Online scheduling appointments application (Symfony).

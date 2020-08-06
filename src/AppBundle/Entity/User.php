@@ -114,7 +114,7 @@ class User
     }
 
     /**
-     * Set typetId
+     * Set typeId
      *
      * @param integer $typeId
      *

@@ -3,7 +3,9 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Dates;
-use Symfony\Component\Validator\Constraints\DateTime;
+use DateTime;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -16,17 +18,16 @@ class DefaultController extends Controller
      */
     public function homeAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $usersRepo = $em->getRepository('AppBundle:User');
-        $users = $usersRepo->findAll();
         return $this->render('AppBundle:Default:home.html.twig',[
             'success'=>true
         ]);
-
     }
 
     /**
      * @Route("/login", methods={"POST"})
+     * @param SessionInterface $session
+     * @param Request $req
+     * @return RedirectResponse|Response|null
      */
     public function loginAction(SessionInterface $session, Request $req)
     {
@@ -48,7 +49,7 @@ class DefaultController extends Controller
         $messages = [];
         $messages['success'] = $match;
 
-        $today = (new \DateTime('now'))->getTimestamp();
+        $today = (new DateTime('now'))->getTimestamp();
         $day = date('d-m-Y', $today);
         $dayArr = explode('-',$day);
         $zi = $dayArr[0];
@@ -69,6 +70,8 @@ class DefaultController extends Controller
 
     /**
      * @Route("/logout")
+     * @param SessionInterface $session
+     * @return Response|null
      */
     public function logoutAction(SessionInterface $session)
     {
@@ -78,17 +81,23 @@ class DefaultController extends Controller
 
     /**
      * @Route("/showUserPage")
+     * @param SessionInterface $session
+     * @return Response|null
      */
     public function showUserPageAction(SessionInterface $session)
     {
         return $this->render('AppBundle:Default:show_user_page.html.twig',[
-            'user'=>$session->get('name')
+            'user'=>$session->get('name'),
+            'today'=>$session->get('day')
         ]);
-
     }
 
     /**
      * @Route("/selectDate/{id}", methods={"POST"})
+     * @param SessionInterface $session
+     * @param Request $request
+     * @param null $id
+     * @return Response|null
      */
     public function selectDateAction(SessionInterface $session, Request $request, $id =null)
     {
@@ -97,7 +106,7 @@ class DefaultController extends Controller
         $month = explode('-',$data)[1];
         $year = explode('-',$data)[0];
 
-        $data = new \DateTime();
+        $data = new DateTime();
         $data->setDate($year,$month,$day);
 
         $wantedData = $data->format('Y-m-d');

@@ -2,9 +2,9 @@
 
 namespace AppBundle\Entity;
 
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints\Date;
 
 /**
  * Dates
@@ -24,7 +24,7 @@ class Dates
     private $id;
 
     /**
-     * @var \DateTime
+     * @var DateTime
      *
      * @ORM\Column(name="data", type="date")
      */
@@ -33,7 +33,7 @@ class Dates
     /**
      * Set data
      *
-     * @param \DateTime $data
+     * @param DateTime $data
      *
      * @return Dates
      */
@@ -47,7 +47,7 @@ class Dates
     /**
      * Get data
      *
-     * @return \DateTime
+     * @return DateTime
      */
     public function getData()
     {
